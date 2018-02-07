@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import tweepy
-import commands
 from access import *
 
 
@@ -16,14 +15,10 @@ class MyStreamListener(tweepy.StreamListener):
     def on_status(self, status):
         # When a tweet is published it arrives here.
         print(status.user.screen_name)
-        print(status.text)  # Console output may not be UTF-8
-        commands.getoutput('python3 SS.py')
-        img = 'screenshot.png'
-        #mensaje = "Hola .@" + str(status.user.screen_name) + " aquí una captura de pantalla..."
-        mensaje1 = "Hola .@" + str(status.user.screen_name)
-        api.update_status(mensaje1)
-        #api.update_with_media(img, status=mensaje)
-        print("-"*10)
+        print(status.text)       
+        mensaje = "Hola .@" + str(status.user.screen_name)
+        api.update_status(mensaje)
+        print("-"*15)
         
 
 
@@ -37,6 +32,6 @@ if __name__ == '__main__':
     myStreamListener = MyStreamListener()
     myStream = tweepy.Stream(auth=api.auth, listener=myStreamListener)
 
-    print(">> tweets con @josetrejo25_ #starwars")
-    myStream.filter(track=['@josetrejo25_ #starwars'])
+    print("**** tweets con @Usiario ****")
+    myStream.filter(track=['@usuario'*)
 
