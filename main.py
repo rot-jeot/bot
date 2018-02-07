@@ -16,7 +16,7 @@ class MyStreamListener(tweepy.StreamListener):
         # When a tweet is published it arrives here.
         print(status.user.screen_name)
         print(status.text)       
-        mensaje = "Hola .@" + str(status.user.screen_name)
+        mensaje = "Hola @" + str(status.user.screen_name)
         api.update_status(mensaje)
         print("-"*15)
         
@@ -33,5 +33,5 @@ if __name__ == '__main__':
     myStream = tweepy.Stream(auth=api.auth, listener=myStreamListener)
 
     print("**** tweets con @Usiario ****")
-    myStream.filter(track=['@usuario'*)
+    myStream.filter(track=['@usuario'])
 
